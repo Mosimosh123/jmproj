@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <style>
+    .calculator {
+  width: 250px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+  height: 50px;
+  padding: 10px;
+  text-align: right;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+button {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #aaa;
+}
+
+button:active {
+  background-color: #555;
+  color: #fff;
+}
+
+  </style>
+  <body>
+    <div class="calculator">
+      <div class="display">
+        <input type="text" id="input" readonly>
+      </div>
+      <div class="buttons">
+        <button onclick="clearInput()">CLEAR</button>
+        <button onclick="deleteInput()">DEL</button>
+        <button onclick="addToInput('/')">/</button>
+        <button onclick="addToInput('*')">*</button>
+        <button onclick="addToInput('7')">7</button>
+        <button onclick="addToInput('8')">8</button>
+        <button onclick="addToInput('9')">9</button>
+        <button onclick="addToInput('-')">-</button>
+        <button onclick="addToInput('4')">4</button>
+        <button onclick="addToInput('5')">5</button>
+        <button onclick="addToInput('6')">6</button>
+        <button onclick="addToInput('+')">+</button>
+        <button onclick="addToInput('1')">1</button>
+        <button onclick="addToInput('2')">2</button>
+        <button onclick="addToInput('3')">3</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="addToInput('0')">0</button>
+        <button onclick="addToInput('.')">.</button>
+      </div>
+    </div>
+    <script>
+        let input = document.getElementById('input');
+
+function addToInput(value) {
+  input.value += value;
+}
+
+function clearInput() {
+  input.value = '';
+}
+
+function deleteInput() {
+  input.value = input.value.slice(0, -1);
+}
+
+function calculate() {
+  try {
+    input.value = eval(input.value);
+  } catch (error) {
+    input.value = 'Error';
+  }
+}
+
+    </script>
+  </body>
+</html>
