@@ -6,50 +6,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <style>
-    .calculator {
-  width: 250px;
-  margin: 50px auto;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f2f2f2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.display {
-  height: 50px;
-  padding: 10px;
-  text-align: right;
-  background-color: #fff;
-  border-radius: 10px 10px 0 0;
-}
-
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
-  padding: 10px;
-  border-radius: 0 0 10px 10px;
-}
-
-button {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  background-color: #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #aaa;
-}
-
-button:active {
-  background-color: #555;
-  color: #fff;
-}
-
+    
   </style>
   <body>
     <div class="calculator">
@@ -77,28 +34,8 @@ button:active {
         <button onclick="addToInput('.')">.</button>
       </div>
     </div>
-    <script>
-        let input = document.getElementById('input');
+    <script source="script.js">
 
-function addToInput(value) {
-  input.value += value;
-}
-
-function clearInput() {
-  input.value = '';
-}
-
-function deleteInput() {
-  input.value = input.value.slice(0, -1);
-}
-
-function calculate() {
-  try {
-    input.value = eval(input.value);
-  } catch (error) {
-    input.value = 'Error';
-  }
-}
 
     </script>
   </body>
